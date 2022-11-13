@@ -1,9 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const Ticket = require("../model/ticketModel");
-
+const User = require("../model/userModel");
 //GET: Route:/user/ticket
 const allTickets = asyncHandler(async (req, res) => {
-  const tickets = await Ticket.find({});
+  const tickets = await Ticket.find({user:req.user.id});
   res.status(200).json(tickets);
 });
 
@@ -12,7 +12,7 @@ const createTicket = asyncHandler(async (req, res) => {
   if (!req.body) {
     throw new Error("Please Enter the values");
   }
-  const ticket = await Ticket.create(req.body);
+  const ticket = await Ticket.create({...req.body,user:req.user.id});
   res.status(200).json(ticket);
 });
 
@@ -22,6 +22,18 @@ const updateTicket = asyncHandler(async (req, res) => {
   if (!findTicket) {
     res.status(400);
     throw new Error("Ticket not found");
+  }
+
+  const user = await User.findById(req.user.id)
+  //check for user:
+  if(!user){
+    res.status(401);
+    throw new Error("User not found");
+  }
+  //check if the user id in ticket (user id:we attached in middleware)matches with the logged in user
+  if(findTicket.user.toString()!==user.id){
+    res.status(401);
+    throw new Error("User not Authorized");
   }
   const updatedTicket = await Ticket.findByIdAndUpdate(
     req.params.id,
@@ -37,6 +49,17 @@ const deleteTicket = asyncHandler(async (req, res) => {
   if (!findTicket) {
     res.status(400);
     throw new Error("Ticket not found");
+  }
+  const user = await User.findById(req.user.id)
+  //check for user:
+  if(!user){
+    res.status(401);
+    throw new Error("User not found");
+  }
+  //check if the user id in ticket (user id:we attached in middleware)matches with the logged in user
+  if(findTicket.user.toString()!==user.id){
+    res.status(401);
+    throw new Error("User not Authorized");
   }
   await findTicket.remove();
   res.status(200).json({ id: req.params.id });

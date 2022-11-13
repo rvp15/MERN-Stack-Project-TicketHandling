@@ -1,14 +1,11 @@
 const mongoose = require ('mongoose')
 
 const ticketSchema = mongoose.Schema({
-    firstname:{
+    name:{
         type: String,
         required: [true,'Please enter first name']
     },
-    lastname:{
-        type: String,
-        required: [true,'Please enter last name']
-    },
+
     email: {
         type: String,
         required: true,
@@ -16,6 +13,12 @@ const ticketSchema = mongoose.Schema({
     detail:{
         type: String,
         required: [true,'Please enter details']
+    },
+    //this allows the user associate with his tickets
+    user:{
+        type: String,
+        require: true,
+        // ref: 'User',
     },
    
 } ,
