@@ -1,0 +1,16 @@
+.portal-section{
+    display: flex;
+   justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.portal-menu{
+    margin: 30px;
+    padding: 30px;
+    min-width: 20%;
+    max-height: 15%;
+    min-height: 15%;
+    -webkit-box-shadow: 3px 7px 7px 2px #908f8f;
+    box-shadow: 3px 7px 7px 1px #acacac;
+}

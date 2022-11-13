@@ -24,14 +24,14 @@ const updateTicket = asyncHandler(async (req, res) => {
     throw new Error("Ticket not found");
   }
 
-  const user = await User.findById(req.user.id)
+  // const user = await User.findById(req.user.id)
   //check for user:
-  if(!user){
+  if(!req.user){
     res.status(401);
     throw new Error("User not found");
   }
   //check if the user id in ticket (user id:we attached in middleware)matches with the logged in user
-  if(findTicket.user.toString()!==user.id){
+  if(findTicket.user.toString()!==req.user.id){
     res.status(401);
     throw new Error("User not Authorized");
   }
@@ -50,14 +50,14 @@ const deleteTicket = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Ticket not found");
   }
-  const user = await User.findById(req.user.id)
+  // const user = await User.findById(req.user.id)
   //check for user:
-  if(!user){
+  if(!req.user){
     res.status(401);
     throw new Error("User not found");
   }
   //check if the user id in ticket (user id:we attached in middleware)matches with the logged in user
-  if(findTicket.user.toString()!==user.id){
+  if(findTicket.user.toString()!==req.user.id){
     res.status(401);
     throw new Error("User not Authorized");
   }
