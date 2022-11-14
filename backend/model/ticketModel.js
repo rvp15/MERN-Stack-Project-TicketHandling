@@ -6,15 +6,16 @@ const ticketSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    detail:{
-        type: String,
-        required: [true,'Please enter details']
-    },
+    detail:[{
+        description:{ type:String,required: [true,'Please enter details']},
+        date:{type:Date,default:Date.now},
+    }],
+   
     //this allows the user associate with his tickets
-    user:{
+   user:{
         type: String,
         require: true,
-        // ref: 'User',
+        ref: 'User',
     },
    
 } ,

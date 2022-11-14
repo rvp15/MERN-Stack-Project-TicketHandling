@@ -14,6 +14,7 @@ import MaintanceRequest from "./pages/portalpages/MaintanceRequest";
 import Announcement from "./pages/portalpages/Announcement";
 import Lease from "./pages/portalpages/Lease";
 import Contacts from "./pages/portalpages/Contacts";
+import TicketEdit from "./pages/TicketEdit";
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
         <Route path="/profile/announcement" element={<Announcement/>} />
         <Route path="/profile/lease" element={<Lease/>} />
         <Route path="/profile/contacts" element={<Contacts/>} />
+        <Route path='/ticket/:id' element={<TicketEdit/>}/>
+
       </Routes>
     );
   } else {

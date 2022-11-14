@@ -35,11 +35,14 @@ const updateTicket = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error("User not Authorized");
   }
+  // const dataToUpdate = {...findTicket, detail:[{'description':req.body.update,'date':new Date()}]}
+  // console.log('dataToUpdate', dataToUpdate)
   const updatedTicket = await Ticket.findByIdAndUpdate(
     req.params.id,
-    req.body,
+    {$push:{detail:{'description':req.body.update,'date':new Date()}}},
     { new: true }
   );
+
   res.status(200).json(updatedTicket);
 });
 

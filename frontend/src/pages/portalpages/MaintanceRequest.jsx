@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useDispatch} from "react-redux";
-import { createticket } from "../../features/tickets/ticketSlice";
+import { createticket , alltickets } from "../../features/tickets/ticketSlice";
 import DisplayTickets from "../../components/DisplayTickets";
 
 const token =
@@ -35,7 +35,7 @@ function MaintanceRequest() {
     if ( !category || !detail) {
       toast.error("Please enter all fields");
     } else {
-      const ticketdetail = {  category, detail };
+      const ticketdetail = { category, detail };
       try {
         const response = await axiosAuth.post("/ticket", ticketdetail, token);
         console.log(response.data);
@@ -43,6 +43,19 @@ function MaintanceRequest() {
       } catch (error) {}
     }
   };
+
+  const getalltickets = async()=>{
+    try{
+      const response = await axiosAuth.get("/ticket",token);
+  // console.log(response.data)
+  dispatch(alltickets(response.data));
+    }catch(error){
+      console.log(error)
+    }
+  }
+  useEffect(()=>{
+  getalltickets()
+  },[])
 
   return (
     <>
