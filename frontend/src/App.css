@@ -14,3 +14,12 @@
     -webkit-box-shadow: 3px 7px 7px 2px #908f8f;
     box-shadow: 3px 7px 7px 1px #acacac;
 }
+.maintance-req{
+    background-color: rgb(202, 203, 203);
+}
+.display-ticket{
+    max-width: 100%;
+   
+    -webkit-box-shadow: 3px 7px 7px 2px #908f8f;
+    box-shadow: 3px 7px 7px 1px #acacac;
+}

@@ -1,12 +1,8 @@
 const mongoose = require ('mongoose')
 
 const ticketSchema = mongoose.Schema({
-    name:{
-        type: String,
-        required: [true,'Please enter first name']
-    },
-
-    email: {
+ 
+    category:{
         type: String,
         required: true,
     },
