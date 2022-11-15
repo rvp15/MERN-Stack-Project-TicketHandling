@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function DisplayTickets() {
   const { tickets } = useSelector((state) => state.ticket);
-
+  console.log(tickets);
   return (
     <div>
       <h3> Submitted Tickets</h3>
@@ -12,17 +12,28 @@ function DisplayTickets() {
         return (
           <ul className="display-tik-section">
             <li className="display-ticket" key={item.user}>
-            <div>  <span> Created on : {item.detail[0].date.toLocaleString()}</span> 
-             <Link to={`/ticket/${item._id}`}> <button className='edit-btn'><AiOutlineEdit/></button></Link></div>
-            
-              {item.detail?.map((eachupdate) => {
-               
-                return (
-                  <ul><hr />
-                    <li key={eachupdate._id}>{eachupdate.description}<span> ,update at :{eachupdate.date}</span></li>
-                  </ul>
-                );
-              })}
+              <div className="ticket-list">
+               <div className="align-status">
+                <div>Category: {item.category}</div>
+                 <div className="status"> status: {item.status}</div>
+                <Link to={`/ticket/${item._id}`}>
+                  {" "}
+                  <button className="edit-btn">
+                    <AiOutlineEdit />
+                  </button>
+                </Link></div>
+                {item.detail?.map((eachupdate) => {
+                  return (
+                    <ul>
+                      <hr />
+                      <li key={eachupdate._id}>
+                        {eachupdate.description}
+                        <span> ,update at :{eachupdate.date}</span>
+                      </li>
+                    </ul>
+                  );
+                })}
+              </div>
             </li>
           </ul>
         );

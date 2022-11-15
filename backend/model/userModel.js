@@ -17,6 +17,10 @@ const userSchema = new Schema({
         type: String, 
         required:[true,'Please add password'],
         minlength: 6
+    },
+    isadmin:{
+        type: Boolean,
+        default: false
     }
 },
 {

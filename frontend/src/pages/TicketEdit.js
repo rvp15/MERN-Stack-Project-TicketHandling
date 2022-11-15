@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams,useNavigate,Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -59,6 +59,10 @@ const id =filtereddata[0]._id
             <button className="edit-btn" type="submit">
               Update
             </button>
+            <Link to={`/profile/maintancerequest`}>
+            <button className="edit-btn" type="submit">
+              Cancle
+            </button>  </Link>
           </div>
         </form>
       </div>

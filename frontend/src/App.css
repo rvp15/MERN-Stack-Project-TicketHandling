@@ -33,6 +33,19 @@
     display: flex;
     justify-content: center;
  }
+ .ticket-list{
+    display: flex;
+    align-items: center;
+flex-direction: column;
+
+ }
+ .align-status{
+display: flex;
+align-items: center;
+ }
+ .status{
+    margin: 20px;
+ }
  .edit-btn{
    margin: 30px;
         padding: 8px 18px;
@@ -45,4 +58,9 @@
         cursor: pointer;
         text-align: center;
       
+ }
+ .container-size{
+    max-width: 70%;
+
+
  }

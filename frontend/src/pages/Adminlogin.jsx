@@ -1,17 +1,16 @@
-import { useState} from "react";
-import { FaSignInAlt } from "react-icons/fa";
+import { useState } from "react";
+import { RiLoginBoxFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { setuser ,settoken} from "../features/auth/authSlice";
+import { setisAdmin } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 const axiosAuth = axios.create({
   baseURL: "http://localhost:5000/api",
 });
 
-
-function Login() {
+function Adminlogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -24,26 +23,24 @@ function Login() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      const response = await axiosAuth.post("/user/login", form);
+    try {
+      const response = await axiosAuth.post("/admin/adminlogin", form);
       console.log(response);
-      dispatch(setuser(response.data));
-     dispatch(settoken(response.data))
-   navigate('/profile')
-  
-    }catch(error){
-      toast.error('Invalid Credentials')
-      console.log(error.response.data.error)
-     
+      dispatch(setisAdmin(response.data));
+    
+      navigate("/admin/adminportal");
+    } catch (error) {
+      toast.error("Invalid Credentials");
+      console.log(error.response.data.error);
     }
   };
   return (
     <>
       <section className="heading">
         <h1>
-          <FaSignInAlt /> Tenant Login
+          <RiLoginBoxFill /> Admin Login
         </h1>
       </section>
       <section className="form">
@@ -79,4 +76,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Adminlogin;

@@ -15,6 +15,9 @@ import Announcement from "./pages/portalpages/Announcement";
 import Lease from "./pages/portalpages/Lease";
 import Contacts from "./pages/portalpages/Contacts";
 import TicketEdit from "./pages/TicketEdit";
+import Adminlogin from "./pages/Adminlogin";
+import Adminportal from "./pages/Adminportal";
+
 
 function App() {
 
@@ -25,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/payment" element={<Payment />} />
+        <Route path="/profile/payment" element={<Payment/>} />
         <Route path="/profile/maintancerequest" element={<MaintanceRequest/>} />
         <Route path="/profile/announcement" element={<Announcement/>} />
         <Route path="/profile/lease" element={<Lease/>} />
@@ -34,13 +37,18 @@ function App() {
 
       </Routes>
     );
-  } else {
+  } else if(user && user.isadmin) {
+<Routes>
+<Route path="/admin/adminportal" element={<Adminportal/>} />
+</Routes>
+  }else{
     routes = (
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="*" element={<Login />}  />
+        <Route path="/" element={<Home/>} />
+        <Route path="/adminlogin" element={<Adminlogin/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="*" element={<Login/>}  />
       </Routes>
     );
   }

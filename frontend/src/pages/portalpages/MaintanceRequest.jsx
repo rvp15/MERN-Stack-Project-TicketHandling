@@ -21,10 +21,10 @@ function MaintanceRequest() {
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({
-  
-    category: "",
-    detail: "",
+   category: "",
+    detail: '',
   });
+  // {$push:{detail:{'description':req.body.update,'date':new Date()}}},
   const {  category, detail } = form;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -40,7 +40,9 @@ function MaintanceRequest() {
         const response = await axiosAuth.post("/ticket", ticketdetail, token);
         console.log(response.data);
         dispatch(createticket(response.data));
-      } catch (error) {}
+      } catch (error) {
+        console.log(error)
+      }
     }
   };
 

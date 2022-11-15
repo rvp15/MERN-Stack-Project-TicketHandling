@@ -7,9 +7,13 @@ const ticketSchema = mongoose.Schema({
         required: true,
     },
     detail:[{
-        description:{ type:String,required: [true,'Please enter details']},
+        description:{ type:String},
         date:{type:Date,default:Date.now},
     }],
+    status:{
+        type: String,
+        default:'Open'
+    },
    
     //this allows the user associate with his tickets
    user:{

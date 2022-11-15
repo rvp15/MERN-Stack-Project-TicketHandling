@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:false}))
 
 app.use('/api/ticket', require('./routes/ticketRoutes'))
 app.use('/api/user', require('./routes/userRoutes'))
-
+app.use('/api/admin', require('./routes/adminRoute'))
 
 app.use(errorHandler)
 app.listen(port,()=>{

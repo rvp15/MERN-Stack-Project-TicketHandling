@@ -1,5 +1,6 @@
 import { MdOutlineLogin } from "react-icons/md";
 import { FaSignOutAlt, FaUser } from "react-icons/fa";
+import {RiLoginBoxFill} from "react-icons/ri"
 import { AiTwotoneHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -46,9 +47,15 @@ function Navbar() {
           <ul>
             {" "}
             <li>
+            <Link to="/adminlogin">
+                <RiLoginBoxFill />
+               Admin Login
+              </Link>
+            </li>
+            <li>
               <Link to="/login">
                 <MdOutlineLogin />
-                Login
+               Tenant Login
               </Link>
             </li>
             <li>
