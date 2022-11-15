@@ -14,9 +14,12 @@ export const ticketSlice = createSlice({
     },
     alltickets:(state,action)=>{
 state.tickets=action.payload
+    },
+    resetTicket:(state,action)=>{
+      state.tickets = []
     }
   },
 });
 
-export const { createticket,alltickets } = ticketSlice.actions;
+export const { createticket,alltickets,resetTicket } = ticketSlice.actions;
 export default ticketSlice.reducer;

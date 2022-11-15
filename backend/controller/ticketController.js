@@ -16,7 +16,6 @@ const createTicket = asyncHandler(async (req, res) => {
   const ticket = await Ticket.create({
     category: req.body.category,
     detail: [{ description: req.body.detail, date: new Date() }],
-
     user: req.user.id,
   });
   res.status(200).json(ticket);

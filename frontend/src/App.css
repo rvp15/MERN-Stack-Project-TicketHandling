@@ -61,6 +61,27 @@ align-items: center;
  }
  .container-size{
     max-width: 70%;
+}
+.admin-ctn{
+    display: flex;  
+    flex-direction: column;
+align-items: center;
 
+  
+}
+.admin-container{
 
- }
+height: 500px;
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+-webkit-box-shadow: 3px 7px 7px 2px #737272;
+box-shadow: 3px 7px 7px 2px #918f8f;
+}
+.tenant-li,.ticket-li{
+    /* border: 1px solid black; */
+    padding: 160px;
+    -webkit-box-shadow: 3px 7px 7px 2px #737272;
+    box-shadow: 3px 7px 7px 2px #918f8f;
+}

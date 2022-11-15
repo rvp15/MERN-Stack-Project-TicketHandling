@@ -1,38 +1,37 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { useDispatch} from "react-redux";
-import { createticket , alltickets } from "../../features/tickets/ticketSlice";
+import { useDispatch } from "react-redux";
+import { createticket, alltickets } from "../../features/tickets/ticketSlice";
 import DisplayTickets from "../../components/DisplayTickets";
 
 const token =
   localStorage.getItem("token") !== null
     ? JSON.parse(localStorage.getItem("token"))
     : "";
-
+console.log('token',token)
 const axiosAuth = axios.create({
   baseURL: "http://localhost:5000/api",
   headers: {
     Authorization: `Bearer ${token}`,
   },
 });
-
 function MaintanceRequest() {
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({
-   category: "",
-    detail: '',
+    category: "",
+    detail: "",
   });
   // {$push:{detail:{'description':req.body.update,'date':new Date()}}},
-  const {  category, detail } = form;
+  const { category, detail } = form;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if ( !category || !detail) {
+    if (!category || !detail) {
       toast.error("Please enter all fields");
     } else {
       const ticketdetail = { category, detail };
@@ -41,23 +40,23 @@ function MaintanceRequest() {
         console.log(response.data);
         dispatch(createticket(response.data));
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
   };
 
-  const getalltickets = async()=>{
-    try{
-      const response = await axiosAuth.get("/ticket",token);
-  // console.log(response.data)
-  dispatch(alltickets(response.data));
-    }catch(error){
-      console.log(error)
+  const getalltickets = async () => {
+    try {
+      const response = await axiosAuth.get("/ticket", token);
+      // console.log(response.data)
+      dispatch(alltickets(response.data));
+    } catch (error) {
+      console.log(error);
     }
-  }
-  useEffect(()=>{
-  getalltickets()
-  },[])
+  };
+  useEffect(() => {
+    getalltickets();
+  }, []);
 
   return (
     <>
@@ -67,7 +66,7 @@ function MaintanceRequest() {
       <section className="form">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-          <select
+            <select
               type="text"
               className="form-control"
               id="category"
@@ -99,7 +98,7 @@ function MaintanceRequest() {
           </div>
         </form>
       </section>
-      <DisplayTickets/>
+      <DisplayTickets />
     </>
   );
 }

@@ -5,7 +5,7 @@ import { AiTwotoneHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutuser } from "../features/auth/authSlice";
-
+import { resetTicket } from "../features/tickets/ticketSlice";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -15,15 +15,16 @@ function Navbar() {
   const handleLogout = () => {
 
     dispatch(logoutuser(user));
+    dispatch(resetTicket())
     navigate("/");
   };
+  
   return (
     <div className="header">
       <div className="logo">
         <Link to="/">
           <h3>
             <AiTwotoneHome />
-           
           </h3>
         </Link>
       </div>

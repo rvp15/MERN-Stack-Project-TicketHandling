@@ -30,6 +30,7 @@ if(newUser){
         _id:newUser.id,
         name:newUser.name,
         email:newUser.email,
+        phnumber:newUser.phnumber,
         token: generateToken(newUser._id)
     })
 }else{
@@ -54,6 +55,7 @@ const loginUser = asyncHandler(async (req, res) => {
                 _id:existingUser.id,
                 name:existingUser.name,
                 email:existingUser.email,
+                phnumber:existingUser.phnumber,
                 token: generateToken(existingUser._id)
             })
         }else{

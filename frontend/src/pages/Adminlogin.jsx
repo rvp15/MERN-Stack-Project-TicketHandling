@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { setisAdmin } from "../features/auth/authSlice";
+import { setuser } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -28,7 +28,7 @@ function Adminlogin() {
     try {
       const response = await axiosAuth.post("/admin/adminlogin", form);
       console.log(response);
-      dispatch(setisAdmin(response.data));
+      dispatch(setuser(response.data));
     
       navigate("/admin/adminportal");
     } catch (error) {

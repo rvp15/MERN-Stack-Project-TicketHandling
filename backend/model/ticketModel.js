@@ -7,7 +7,7 @@ const ticketSchema = mongoose.Schema({
         required: true,
     },
     detail:[{
-        description:{ type:String},
+        description:String,
         date:{type:Date,default:Date.now},
     }],
     status:{

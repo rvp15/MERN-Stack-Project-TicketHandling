@@ -16,42 +16,51 @@ import Lease from "./pages/portalpages/Lease";
 import Contacts from "./pages/portalpages/Contacts";
 import TicketEdit from "./pages/TicketEdit";
 import Adminlogin from "./pages/Adminlogin";
-import Adminportal from "./pages/Adminportal";
-
+import Adminportal from "./pages/Adminpages/Adminportal";
+import Adminalluser from "./pages/Adminpages/Adminalluser";
+import AdminallTickets from "./pages/Adminpages/AdminallTickets";
 
 function App() {
-
   const { user } = useSelector((state) => state.auth);
   let routes;
   if (user) {
+    if (user.isadmin) {
+      routes = (
+        <Routes>
+          <Route path="/admin/adminportal" element={<Adminportal />} />
+          <Route path="/admin/alltenants" element={<Adminalluser />} />
+          <Route path="/admin/alltickets" element={<AdminallTickets />} />
+        </Routes>
+      );
+    } else {
+      routes = (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/payment" element={<Payment />} />
+          <Route
+            path="/profile/maintancerequest"
+            element={<MaintanceRequest />}
+          />
+          <Route path="/profile/announcement" element={<Announcement />} />
+          <Route path="/profile/lease" element={<Lease />} />
+          <Route path="/profile/contacts" element={<Contacts />} />
+          <Route path="/ticket/:id" element={<TicketEdit />} />
+        </Routes>
+      );
+    }
+  } else {
     routes = (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/payment" element={<Payment/>} />
-        <Route path="/profile/maintancerequest" element={<MaintanceRequest/>} />
-        <Route path="/profile/announcement" element={<Announcement/>} />
-        <Route path="/profile/lease" element={<Lease/>} />
-        <Route path="/profile/contacts" element={<Contacts/>} />
-        <Route path='/ticket/:id' element={<TicketEdit/>}/>
-
-      </Routes>
-    );
-  } else if(user && user.isadmin) {
-<Routes>
-<Route path="/admin/adminportal" element={<Adminportal/>} />
-</Routes>
-  }else{
-    routes = (
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/adminlogin" element={<Adminlogin/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="*" element={<Login/>}  />
+        <Route path="/adminlogin" element={<Adminlogin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Login />} />
       </Routes>
     );
   }
+  console.log(routes)
   return (
     <>
       <Router>

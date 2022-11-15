@@ -38,8 +38,20 @@ const getAllUser = asyncHandler(async (req, res) => {
     const tickets = await User.find({});
     res.status(200).json(tickets);
   });
+
+    //DELETE: Route:/admin/delete/:id
+const deleteUser = asyncHandler(async(req,res)=>{
+    // const findUser =  await User.findById(req.params.id)
+    // findUser.remove()
+    await User.findByIdAndDelete(req.params.id)
+    res.status(200).json(User);
+})
+
+
 const generateToken = (id) =>{
     return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:'30d'})
 }
 
-module.exports ={loginAdmin,getAllTickets,getAllUser}
+
+
+module.exports ={loginAdmin,getAllTickets,getAllUser,deleteUser}
