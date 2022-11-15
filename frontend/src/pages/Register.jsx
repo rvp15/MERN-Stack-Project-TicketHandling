@@ -43,7 +43,7 @@ function Register() {
             const response = await axiosAuth.post("/user/register", userData);
             console.log(response);
             dispatch(setuser(response.data));
-            
+           
             // setLoading(false)
             navigate("/profile");
           } catch (error) {

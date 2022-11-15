@@ -6,10 +6,11 @@ import { createticket, alltickets } from "../../features/tickets/ticketSlice";
 import DisplayTickets from "../../components/DisplayTickets";
 
 const token =
-  localStorage.getItem("token") !== null
-    ? JSON.parse(localStorage.getItem("token"))
-    : "";
-console.log('token',token)
+localStorage.getItem("token") !== null
+  ? JSON.parse(localStorage.getItem("token"))
+  : "";
+
+console.log(token)
 const axiosAuth = axios.create({
   baseURL: "http://localhost:5000/api",
   headers: {
@@ -47,8 +48,7 @@ function MaintanceRequest() {
 
   const getalltickets = async () => {
     try {
-      const response = await axiosAuth.get("/ticket", token);
-      // console.log(response.data)
+      const response = await axiosAuth.get("/ticket", token)
       dispatch(alltickets(response.data));
     } catch (error) {
       console.log(error);

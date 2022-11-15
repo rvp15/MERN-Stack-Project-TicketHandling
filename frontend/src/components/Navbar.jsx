@@ -1,6 +1,6 @@
 import { MdOutlineLogin } from "react-icons/md";
 import { FaSignOutAlt, FaUser } from "react-icons/fa";
-import {RiLoginBoxFill} from "react-icons/ri"
+import { RiLoginBoxFill } from "react-icons/ri";
 import { AiTwotoneHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,12 +13,11 @@ function Navbar() {
   const { user } = useSelector((state) => state.auth);
 
   const handleLogout = () => {
-
     dispatch(logoutuser(user));
-    dispatch(resetTicket())
+    dispatch(resetTicket());
     navigate("/");
   };
-  
+
   return (
     <div className="header">
       <div className="logo">
@@ -30,33 +29,54 @@ function Navbar() {
       </div>
       <ul>
         {user ? (
-      <>
-        <li>
-        <Link to="/profile">
-          <h3>  <FaUser />
-          {user.name}
-          </h3>
-        </Link>
-          </li>
-            <li>
-               <button className="btn" onClick={handleLogout}>
-                <FaSignOutAlt />
-                Logout
-              </button>
-            </li></>
+          <>
+            {user.isadmin ? (
+              <ul>
+                <Link to="/admin/adminportal">
+                  <h3>
+                    <FaUser />
+                    {user.name}
+                  </h3>
+                </Link>
+                <li>
+                  <button className="btn" onClick={handleLogout}>
+                    <FaSignOutAlt />
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            ) : (
+              <>
+                <li>
+                  <Link to="/profile">
+                    <h3>
+                      <FaUser />
+                      {user.name}
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <button className="btn" onClick={handleLogout}>
+                    <FaSignOutAlt />
+                    Logout
+                  </button>
+                </li>
+              </>
+            )}
+          </>
         ) : (
           <ul>
             {" "}
             <li>
-            <Link to="/adminlogin">
+              <Link to="/adminlogin">
                 <RiLoginBoxFill />
-               Admin Login
+                Admin Login
               </Link>
             </li>
             <li>
               <Link to="/login">
                 <MdOutlineLogin />
-               Tenant Login
+                Tenant Login
               </Link>
             </li>
             <li>

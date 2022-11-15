@@ -30,7 +30,7 @@ function Login() {
       const response = await axiosAuth.post("/user/login", form);
       console.log(response);
       dispatch(setuser(response.data));
-     dispatch(settoken(response.data))
+ 
    navigate('/profile')
   
     }catch(error){
