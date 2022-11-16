@@ -14,6 +14,8 @@ const createTicket = asyncHandler(async (req, res) => {
   }
   // {$push:{detail:{'description':req.body.update,'date':new Date()}}},
   const ticket = await Ticket.create({
+    name:req.body.name,
+    unitnum:req.body.unitnum, 
     category: req.body.category,
     detail: [{ description: req.body.detail, date: new Date() }],
     user: req.user.id,

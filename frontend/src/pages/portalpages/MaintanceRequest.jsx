@@ -25,11 +25,13 @@ function MaintanceRequest() {
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({
+    name: '',
+    unitnum: '',
     category: "",
     detail: "",
   });
   // {$push:{detail:{'description':req.body.update,'date':new Date()}}},
-  const { category, detail } = form;
+  const {name,unitnum, category, detail } = form;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -39,7 +41,7 @@ function MaintanceRequest() {
     if (!category || !detail) {
       toast.error("Please enter all fields");
     } else {
-      const ticketdetail = { category, detail };
+      const ticketdetail = {name,unitnum, category, detail };
       try {
         const response = await axiosAuth.post("/ticket", ticketdetail, token,user);
         console.log(response.data);
@@ -70,6 +72,24 @@ function MaintanceRequest() {
       <section className="form">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
+          <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={name}
+              placeholder="Enter your name"
+              onChange={handleChange}
+            />
+              <input
+              type="number"
+              className="form-control"
+              id="unitnum"
+              name="unitnum"
+              value={unitnum}
+              placeholder="Enter your House Unite"
+              onChange={handleChange}
+            />
             <select
               type="text"
               className="form-control"

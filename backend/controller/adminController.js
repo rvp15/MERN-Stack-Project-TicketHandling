@@ -32,7 +32,10 @@ const getAllTickets = asyncHandler(async (req, res) => {
     const tickets = await Ticket.find({});
     const usersIds = Array.from(new Set(tickets.map(x=>x.user)));
     const usersData = await User.find( {_id: { $in: [...usersIds] } });
-    console.log('usersIds', usersIds, usersData)
+    // console.log('usersIds', usersIds, usersData)
+    // const concatData = {...tickets,...usersData}
+    // console.log('concat',concatData)
+    // console.log(tickets,usersData)
     res.status(200).json({tickets,usersData});
   });
   
@@ -53,7 +56,18 @@ const deleteUser = asyncHandler(async(req,res)=>{
     res.status(200).json({status: "success"});
 
 })
+  //DELETE: Route:/admin/edit/:id
+const editTicket = asyncHandler(async(req,res)=>{
+    console.log('adminedit',req.body)
+    const updatedTicket = await Ticket.findByIdAndUpdate(
+        req.params.id,
+        { status:req.body.update} ,
+        { new: true }
+      );
 
+      console.log(updatedTicket)
+      res.status(200).json(updatedTicket);
+} )
 
 
 const generateToken = (id) =>{
@@ -62,4 +76,4 @@ const generateToken = (id) =>{
 
 
 
-module.exports ={loginAdmin,getAllTickets,getAllUser,deleteUser}
+module.exports ={loginAdmin,getAllTickets,getAllUser,deleteUser,editTicket}

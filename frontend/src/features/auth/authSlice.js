@@ -4,8 +4,15 @@ import { createSlice } from "@reduxjs/toolkit";
 // import {authService} from './authService'
 
 //Get user from local storage
-const user = JSON.parse(localStorage.getItem("user"));
-const token = JSON.parse(localStorage.getItem("token"));
+let user = null;
+if(localStorage.getItem("user")) {
+  user = JSON.parse(localStorage.getItem("user"))
+}
+let token = null;
+if(localStorage.getItem("token")) {
+  token = JSON.parse(localStorage.getItem("token"))
+}
+
 // const admin = JSON.parse(localStorage.getItem("admin"));
 
 const initialState = {

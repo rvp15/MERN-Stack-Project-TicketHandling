@@ -1,6 +1,12 @@
 const mongoose = require ('mongoose')
 
 const ticketSchema = mongoose.Schema({
+    name:{
+      type: String,
+    },
+    unitnum:{
+        type: String,
+    },
  
     category:{
         type: String,

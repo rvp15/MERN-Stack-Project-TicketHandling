@@ -22,8 +22,8 @@ function Navbar() {
     <div className="header">
       <div className="logo">
         <Link to="/">
-          <h3>
-            <AiTwotoneHome />
+          <h3 className="villa">
+            <AiTwotoneHome  />
           </h3>
         </Link>
         <h2 className="villa">Welcome to Sudiksha Villas</h2>

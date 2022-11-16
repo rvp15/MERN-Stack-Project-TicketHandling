@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+
   height: 100vh;
+  width: 100vw;
 }
 
 a {
@@ -25,7 +27,7 @@ ul {
 }
 
 li {
-  line-height: 2.2;
+  line-height: 3;
 }
 
 h1,
@@ -36,14 +38,12 @@ h3 {
 }
 
 .container {
-  width: 100%;
-  /* max-width: 960px; */
-  margin: 0 auto;
-  padding: 0 20px;
+padding: 0;
+margin: 0;
+margin-left: 0px;
   text-align: center;
-}
-*{
-  margin: 0px;
+  max-width: 100%;
+
 }
 
 .header {
@@ -55,7 +55,8 @@ h3 {
   border-bottom: 1px solid #b0afaf;
   margin-bottom: 60px;
   max-width: 100%;
-  background-color: #e6e6e6;
+
+background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50%, rgb(231, 191, 135) 100%);
 
 }
 
@@ -76,7 +77,7 @@ h3 {
 }
 
 .header ul li a:hover {
-  color: rgb(32, 150, 240);
+  color: rgb(203, 203, 203);
 }
 
 .header ul li a svg {
@@ -140,6 +141,7 @@ h3 {
 .logo{
   display: flex;
   align-items:flex-end;
+
 }
 .btn svg {
   margin-right: 8px;
@@ -159,7 +161,7 @@ h3 {
   transform: scale(0.98);
 }
 
-.loadingSpinnerContainer {
+/* .loadingSpinnerContainer {
   position: fixed;
   top: 0;
   right: 0;
@@ -179,8 +181,8 @@ h3 {
   border-color: #000 transparent #555 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
-}
-
+} */
+/* 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -202,4 +204,4 @@ h3 {
   .heading p {
     font-size: 1.5rem;
   }
-}
+} */

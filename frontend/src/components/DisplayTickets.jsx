@@ -16,12 +16,7 @@ function DisplayTickets() {
                <div className="align-status">
                 <div>Category: {item.category}</div>
                  <div className="status"> status: {item.status}</div>
-                <Link to={`/ticket/${item._id}`}>
-                  {" "}
-                  <button className="edit-btn">
-                    <AiOutlineEdit />
-                  </button>
-                </Link></div>
+                <Link to={`/ticket/${item._id}`}> <AiOutlineEdit /> </Link></div>
                 {item.detail?.map((eachupdate) => {
                   return (
                     <ul>
