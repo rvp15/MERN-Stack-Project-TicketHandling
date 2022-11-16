@@ -19,13 +19,14 @@ function Register() {
   const [form, setForm] = useState({
     name: "",
     phnumber: '',
+    unitnum:'',
     email: "",
     password: "",
     confirmpwd: "",
   });
 
    
-    const { name,phnumber, email, password, confirmpwd } = form;
+    const { name,phnumber, unitnum,email, password, confirmpwd } = form;
 //   const {user} = useSelector((state)=>state.auth)
 
   const handleChange = (e) => {
@@ -37,7 +38,7 @@ function Register() {
     if(password !== confirmpwd){
         toast.error('Password do not match')
     }else{
-        const userData ={name,phnumber,email,password}
+        const userData ={name,phnumber,unitnum,email,password}
         try {
         //    setLoading(true)
             const response = await axiosAuth.post("/user/register", userData);
@@ -84,6 +85,15 @@ function Register() {
               name="phnumber"
               value={phnumber}
               placeholder="Enter your Phone Number"
+              onChange={handleChange}
+            />
+                    <input
+              type="number"
+              className="form-control"
+              id="unitnum"
+              name="unitnum"
+              value={unitnum}
+              placeholder="Enter your House Unit Number"
               onChange={handleChange}
             />
             <input

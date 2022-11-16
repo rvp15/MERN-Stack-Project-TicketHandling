@@ -1,10 +1,12 @@
 import React from 'react'
+import Colorboard from './Colorboard'
+
 
 function Home() {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
+    <div className='home'>
+      <Colorboard/>
+  </div>
   )
 }
 

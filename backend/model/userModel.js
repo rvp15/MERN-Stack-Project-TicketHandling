@@ -13,6 +13,11 @@ const userSchema = new Schema({
         required:[true,'Please add your phone number'],
         unique: true
     },
+    unitnum:{
+        type: String,
+        required:[true,'Please add your phone number'],
+        unique: true
+    },
     email: {
         type: String,
         required: [true,'Please add email'],

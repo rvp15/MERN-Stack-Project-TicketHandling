@@ -42,14 +42,21 @@ h3 {
   padding: 0 20px;
   text-align: center;
 }
+*{
+  margin: 0px;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
+  margin: 0px;
+  padding: 20px 20px;
+  border-bottom: 1px solid #b0afaf;
   margin-bottom: 60px;
+  max-width: 100%;
+  background-color: #e6e6e6;
+
 }
 
 .header ul {
@@ -60,6 +67,7 @@ h3 {
 
 .header ul li {
   margin-left: 20px;
+  font-family: 'Merienda';font-size: 22px;
 }
 
 .header ul li a {
@@ -68,7 +76,7 @@ h3 {
 }
 
 .header ul li a:hover {
-  color: #777;
+  color: rgb(32, 150, 240);
 }
 
 .header ul li a svg {
@@ -85,13 +93,6 @@ h3 {
 .heading p {
   color: #828282;
 }
-
-.goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
 
 
 .form,
@@ -136,7 +137,10 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-
+.logo{
+  display: flex;
+  align-items:flex-end;
+}
 .btn svg {
   margin-right: 8px;
 }

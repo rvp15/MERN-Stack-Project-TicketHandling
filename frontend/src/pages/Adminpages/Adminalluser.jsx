@@ -22,7 +22,7 @@ export default function Adminalluser() {
     try {
       const response = await axiosAuth.get("/admin/getalluser", user.token);
       setTenants(response.data);
-      console.log(tenants);
+      console.log(response.data);
       //   dispatch(alltickets(response.data));
     } catch (error) {
       console.log(error);

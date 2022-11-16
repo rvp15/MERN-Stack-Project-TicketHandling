@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {toast} from 'react-toastify'
 
+
 const axiosAuth = axios.create({
   baseURL: "http://localhost:5000/api",
 });
@@ -75,6 +76,7 @@ function Login() {
           </div>
         </form>
       </section>
+     
     </>
   );
 }

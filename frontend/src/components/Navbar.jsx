@@ -26,6 +26,7 @@ function Navbar() {
             <AiTwotoneHome />
           </h3>
         </Link>
+        <h2 className="villa">Welcome to Sudiksha Villas</h2>
       </div>
       <ul>
         {user ? (

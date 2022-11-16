@@ -9,6 +9,10 @@ const token =
 localStorage.getItem("token") !== null
   ? JSON.parse(localStorage.getItem("token"))
   : "";
+  const user =
+localStorage.getItem("user") !== null
+  ? JSON.parse(localStorage.getItem("user"))
+  : "";
 
 console.log(token)
 const axiosAuth = axios.create({
@@ -37,7 +41,7 @@ function MaintanceRequest() {
     } else {
       const ticketdetail = { category, detail };
       try {
-        const response = await axiosAuth.post("/ticket", ticketdetail, token);
+        const response = await axiosAuth.post("/ticket", ticketdetail, token,user);
         console.log(response.data);
         dispatch(createticket(response.data));
       } catch (error) {

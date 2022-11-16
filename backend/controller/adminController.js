@@ -30,22 +30,30 @@ const loginAdmin = asyncHandler(async (req, res) => {
 //GET: Route:/admin/getalltickets
 const getAllTickets = asyncHandler(async (req, res) => {
     const tickets = await Ticket.find({});
-    res.status(200).json(tickets);
+    const usersIds = Array.from(new Set(tickets.map(x=>x.user)));
+    const usersData = await User.find( {_id: { $in: [...usersIds] } });
+    console.log('usersIds', usersIds, usersData)
+    res.status(200).json({tickets,usersData});
   });
   
   //GET: Route:/admin/getalltickets
 const getAllUser = asyncHandler(async (req, res) => {
-    const tickets = await User.find({});
-    res.status(200).json(tickets);
+    const allusers = await User.find({});
+    res.status(200).json(allusers);
   });
 
     //DELETE: Route:/admin/delete/:id
 const deleteUser = asyncHandler(async(req,res)=>{
-    // const findUser =  await User.findById(req.params.id)
+    const findUser =  await User.findById(req.params.id)
     // findUser.remove()
-    await User.findByIdAndDelete(req.params.id)
-    res.status(200).json(User);
+    console.log(findUser._id)
+  
+   const delUserRes = await User.findByIdAndDelete(req.params.id)
+ const delTicketsRes = await Ticket.deleteMany({user:findUser._id})
+    res.status(200).json({status: "success"});
+
 })
+
 
 
 const generateToken = (id) =>{

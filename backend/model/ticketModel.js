@@ -21,6 +21,14 @@ const ticketSchema = mongoose.Schema({
         require: true,
         ref: 'User',
     },
+    username:{
+        type: String,
+        require: true,
+        ref: 'User',
+    },
+    phnumber:{ type: String,
+        require: true,
+        ref: 'User',}
    
 } ,
 {
