@@ -26,11 +26,13 @@ The website is developed with (MERN)
 
 >Challenges: 
 
-- Linking User and Ticket Model to link user and his tickets
+- Linking User and Ticket Model to link user and his tickets.
+
+- Updates reflecting after a refresh.
 
  >Future Implementation
 
-- Add more Functionality for practical implementation of my project.
+- Add more Functionality and fix bugs for practical implementation of my project.
 
 >Inspiration:
 
