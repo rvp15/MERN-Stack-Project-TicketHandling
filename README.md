@@ -45,7 +45,7 @@ I cant even complete 10% of my project because of lack of resource and knowledge
  
 - Gained knowledge about Authentication and Authorization.
 - How the front end communicats with backend and work flow of the communication process. 
-- Learned how to use Postman properly.
+
 
 >Installation and Deployment
 

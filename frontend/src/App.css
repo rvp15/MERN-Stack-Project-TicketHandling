@@ -11,6 +11,17 @@
 
 
 }
+.green{
+    color:rgb(32, 175, 29); 
+    font-weight: bold;
+}
+.red{    font-weight: bold;
+    color: rgb(201, 23, 17);
+   
+}
+.orange{    font-weight: bold;
+    color: rgb(196, 115, 8);
+}
 .portal-menu{
     margin: 30px;
     padding: 30px;
@@ -168,7 +179,9 @@ box-shadow: 2px 2px 2px  rgb(175, 175, 172);
 }
 .flower{
     color: rgb(97, 80, 68);
+
 }
+
 .sudiksha{
     color: rgb(78, 77, 77);
     font-size: large;

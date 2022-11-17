@@ -29,6 +29,7 @@ function App() {
     if (user.isadmin) {
       routes = (
         <Routes>
+           <Route path="/" element={<Home />} />
           <Route path="/admin/adminportal" element={<Adminportal />} />
           <Route path="/admin/alltenants" element={<Adminalluser />} />
           <Route path="/admin/alltickets" element={<AdminallTickets />} />

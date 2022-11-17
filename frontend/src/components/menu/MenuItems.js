@@ -1,7 +1,8 @@
 export const items = [
-    {itemText: "AMENITIES", itemLink: "/home"},
-    {itemText: "FLOORPLANS", itemLink: "/about"},
-    {itemText: "GALLERY", itemLink: "/service"},
-    {itemText: "TESTIMONIALS", itemLink: "/portfolio"},
-    {itemText: "CONTACT", itemLink: "/contact"},
+    {itemText: "AMENITIES", itemLink: "#"},
+    {itemText: "FLOORPLANS", itemLink: "#"},
+    {itemText: "GALLERY", itemLink: "#"},
+    {itemText: "TESTIMONIALS", itemLink: "#"},
+    {itemText: "BOOK A TOUR", itemLink: "#"},
+    {itemText: "CONTACT", itemLink: "#"},
 ]

@@ -82,7 +82,7 @@ console.log(res)
                 );
               })}
               <hr />
-              <td>{item.status}</td>
+              <td className={item.status === 'In Progress'?"green":item.status === 'Closed'?"red":'orange'}>{item.status}</td>
               <td>{item.createdAt}</td>
               <td>{item.user}</td>
              <Link to={`/admin/ticket/${item._id}`}> <MdOutlineModeEditOutline /> </Link>
