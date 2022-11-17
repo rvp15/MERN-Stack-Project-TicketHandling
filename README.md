@@ -1,4 +1,46 @@
+# Sudiksha Villas -Apartment
+Tenant Service Request Handling  
 
+>The Project Description
+
+ This project mainly focus on developing Full MERN Stack Project. I have Implemented the project for Sudiksha Villas Apartments, Who are new to the business and needed a website especially to track their tenants  and their requests for service.
+
+
+>Technology Implemented
+
+The website is developed with (MERN)
+- NodeJS
+- Mongoose, MongoDB
+- Express
+- ReactJS
+- Redux
+- BootStrap
+- CSS
+- Used Browser Local Storage
+
+>Basic Requirement:
+
+- Implement Authentication and Authorization by creating Register and login
+
+- Implement CURD Operation
+
+>Challenges: 
+
+- Linking User and Ticket Model to link user and his tickets
+
+ >Future Implementation
+
+- Add more Functionality for practical implementation of my project.
+
+>Inspiration:
+
+- When I started Learning Service Now (Self Study). I tired to develop the ticket handling project but i cant complete 10% of my project because of lack of resource and knowledge. So i wanted to develope fullfill my wish in this project. With all the knowledge I gained from this course I believe if not 100% i was able to implement to some extend.
+
+
+>Installation and Deployment
+
+Deployement Steps:
+Step 1:
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
