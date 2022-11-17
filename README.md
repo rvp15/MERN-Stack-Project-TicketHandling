@@ -34,8 +34,14 @@ The website is developed with (MERN)
 
 >Inspiration:
 
-- When I started Learning Service Now (Self Study). I tired to develop the ticket handling project but i cant complete 10% of my project because of lack of resource and knowledge. So i wanted to develope fullfill my wish in this project. With all the knowledge I gained from this course I believe if not 100% i was able to implement to some extend.
+- When I started Learning Service Now (Self Study). I tired to develop the ticket handling project but 
+I cant even complete 10% of my project because of lack of resource and knowledge. So I wanted to develop to fullfill my wish in this project. With all the knowledge I gained from this course I believe if not 100% i was able to implement to some extend.
 
+>Takeway from Project:
+ 
+- Gained knowledge about Authentication and Authorization.
+- How the front end communicats with backend and work flow of the communication process. 
+- Learned how to use Postman properly.
 
 >Installation and Deployment
 
