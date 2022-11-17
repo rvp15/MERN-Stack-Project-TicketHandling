@@ -31,7 +31,7 @@ function Login() {
       const response = await axiosAuth.post("/user/login", form);
       console.log(response);
       dispatch(setuser(response.data));
- 
+      toast.success('Logged In successfully!')
    navigate('/profile')
   
     }catch(error){

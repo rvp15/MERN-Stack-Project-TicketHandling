@@ -5,7 +5,12 @@
     align-items: center;
     
 }
+.payment{
+    display: flex;
+    justify-content: center;
 
+
+}
 .portal-menu{
     margin: 30px;
     padding: 30px;

@@ -47,9 +47,10 @@ function Register() {
            
             // setLoading(false)
             navigate("/profile");
+            toast.success('Registration successfully completed! ')
           } catch (error) {
               console.log(error.response.data.error)
-              alert(error.response.data.error)
+              toast.error('User Already Exist')
           }
     }
     // if(loading){

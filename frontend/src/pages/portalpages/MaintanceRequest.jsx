@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { createticket, alltickets } from "../../features/tickets/ticketSlice";
 import DisplayTickets from "../../components/DisplayTickets";
 
+
 const token =
 localStorage.getItem("token") !== null
   ? JSON.parse(localStorage.getItem("token"))
@@ -67,6 +68,7 @@ function MaintanceRequest() {
   return (
     <>
       <section className="heading">
+    
         <h3>Submit a Maintance Request Ticket</h3>
       </section>
       <section className="form">
@@ -122,6 +124,7 @@ function MaintanceRequest() {
           </div>
         </form>
       </section>
+    
       <DisplayTickets />
     </>
   );

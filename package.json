@@ -22,7 +22,8 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mdb-react-ui-kit": "^5.0.0",
-    "mongoose": "^6.7.2"
+    "mongoose": "^6.7.2",
+    "react-bootstrap": "^2.6.0"
   },
   "devDependencies": {
     "concurrently": "^7.5.0",
