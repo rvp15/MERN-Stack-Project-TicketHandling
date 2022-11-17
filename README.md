@@ -26,6 +26,8 @@ The website is developed with (MERN)
 
 >Challenges: 
 
+- Pushing the updates of tenants ticket submit request without updating original request by adding new request in an array.
+
 - Linking User and Ticket Model to link user and his tickets.
 
 - Updates reflecting after a refresh.
