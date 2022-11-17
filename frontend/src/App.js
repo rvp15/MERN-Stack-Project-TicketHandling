@@ -20,6 +20,7 @@ import Adminportal from "./pages/Adminpages/Adminportal";
 import Adminalluser from "./pages/Adminpages/Adminalluser";
 import AdminallTickets from "./pages/Adminpages/AdminallTickets";
 import AdminEditTicket from "./pages/Adminpages/AdminEditTicket";
+import Amenities from "./pages/Amenities";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/admin/alltenants" element={<Adminalluser />} />
           <Route path="/admin/alltickets" element={<AdminallTickets />} />
           <Route path="/admin/ticket/:id" element={<AdminEditTicket/>} />
+          <Route path='/amenities' element={<Amenities/>}></Route>
         </Routes>
       );
     } else {
@@ -48,6 +50,7 @@ function App() {
           <Route path="/profile/lease" element={<Lease />} />
           <Route path="/profile/contacts" element={<Contacts />} />
           <Route path="/ticket/:id" element={<TicketEdit />} />
+          <Route path='/amenities' element={<Amenities/>}></Route>
        
         </Routes>
       );
@@ -60,6 +63,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Login />} />
+        <Route path='/amenities' element={<Amenities/>}></Route>
       </Routes>
     );
   }

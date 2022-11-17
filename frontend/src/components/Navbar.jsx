@@ -6,6 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutuser } from "../features/auth/authSlice";
 import { resetTicket } from "../features/tickets/ticketSlice";
+import { GiFlowers } from "react-icons/gi";
+import React, { useState } from "react";
+import Menu from "./menu/Menu";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -17,16 +20,29 @@ function Navbar() {
     dispatch(resetTicket());
     navigate("/");
   };
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="header">
-      <div className="logo">
-        <Link to="/">
+      <span className="material-icons menu-btn" onClick={() => setIsOpen(true)}>
+        menu
+      </span>
+      <Menu isOpen={isOpen} onChange={setIsOpen}></Menu>
+ <Link to="/">
           <h3 className="villa">
-            <AiTwotoneHome  />
+            <span className="flower">
+              <AiTwotoneHome />
+            </span>
           </h3>
         </Link>
-        <h2 className="villa">Welcome to Sudiksha Villas</h2>
+      <div className="logo">
+       <h2 className="villa">
+          <span> Sudiksha Villas</span>{" "}
+          <span className="sudiksha">At Marlboro</span>
+          <span className="flower">
+            {" "}
+            <GiFlowers />
+          </span>
+        </h2>
       </div>
       <ul>
         {user ? (
@@ -39,8 +55,8 @@ function Navbar() {
                     {user.name}
                   </h3>
                 </Link>
-                <li>
-                  <button className="btn" onClick={handleLogout}>
+                <li >
+                  <button className="btn " onClick={handleLogout}>
                     <FaSignOutAlt />
                     Logout
                   </button>

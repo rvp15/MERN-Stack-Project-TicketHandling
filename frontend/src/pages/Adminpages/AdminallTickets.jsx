@@ -77,10 +77,11 @@ console.log(res)
               {item.detail.map((des, i) => {
                 return (
                   <ul>
-                    <li>{des.description}</li>
+                    <li>{des.description}</li> 
                   </ul>
                 );
               })}
+              <hr />
               <td>{item.status}</td>
               <td>{item.createdAt}</td>
               <td>{item.user}</td>

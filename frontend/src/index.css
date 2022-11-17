@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -6,7 +6,17 @@
   box-sizing: border-box;
   
 }
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 body {
 
   height: 100vh;
@@ -15,7 +25,8 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: rgb(70, 55, 2);
+  font-weight:bold;
 }
 
 p {
@@ -55,8 +66,11 @@ margin-left: 0px;
   border-bottom: 1px solid #b0afaf;
   margin-bottom: 60px;
   max-width: 100%;
+  background-image: url("6.jpg");
 
-background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50%, rgb(231, 191, 135) 100%);
+  background-size: auto;
+
+/* background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50%, rgb(231, 191, 135) 100%); */
 
 }
 
@@ -76,10 +90,12 @@ background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50
   align-items: center;
 }
 
-.header ul li a:hover {
+.header ul li a :hover {
   color: rgb(203, 203, 203);
 }
-
+.flower:hover{
+  color: rgb(203, 203, 203);
+}
 .header ul li a svg {
   margin-right: 5px;
 }
@@ -125,9 +141,9 @@ background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50
 
 .btn {
   padding: 10px 20px;
-  border: 1px solid #000;
+  border: 1px solid rgb(45, 44, 44);
   border-radius: 5px;
-  background: #000;
+  background: rgb(66, 65, 65);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -137,6 +153,9 @@ background: linear-gradient(37deg, rgba(223,215,208,1) 0%, rgb(188, 170, 144) 50
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.logout-btn{
+  margin-left: 40px;
 }
 .logo{
   display: flex;
