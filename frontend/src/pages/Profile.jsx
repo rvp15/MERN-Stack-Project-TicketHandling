@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Profile() {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
-  // console.log(user)
+  console.log(user)
   useEffect(() => {
     if (!user) {
       navigate("/");

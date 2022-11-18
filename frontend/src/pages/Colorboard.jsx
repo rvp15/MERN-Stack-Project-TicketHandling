@@ -1,4 +1,4 @@
-import { set } from 'mongoose'
+
 import React from 'react'
 import { useState , useEffect } from 'react'
 import imageSlide from '../data'

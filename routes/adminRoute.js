@@ -8,5 +8,7 @@ router.get('/getalluser',protect,getAllUser )
 router.delete('/delete/:id',protect,deleteUser)
 router.put('/edit/:id',protect,editTicket)
 router.get('/getallticket',protect,getAllTickets )
-
+router.get('/test',(req,res)=>{
+    res.status(200).json('hello');
+})
 module.exports = router

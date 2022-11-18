@@ -74,7 +74,7 @@ function AdminEditTicket() {
           );
         })}
 
-        <form onSubmit={handleSubmit} className="form-group">
+        <form onSubmit={handleSubmit} className="form-group adminedit">
           <select
             type="text"
             className="form-control"

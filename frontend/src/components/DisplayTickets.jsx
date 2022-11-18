@@ -14,9 +14,11 @@ function DisplayTickets() {
             <li className="display-ticket" key={item.user}>
               <div className="ticket-list">
                <div className="align-status">
-                <div>Category: {item.category}</div>
-                 <div className="status"> status: {item.status}</div>
-                <Link to={`/ticket/${item._id}`}> <AiOutlineEdit /> </Link></div>
+                <div className="categoryy">Category: {item.category}</div>
+                 <div className={item.status === 'In Progress'?"green":item.status === 'Closed'?"red":'orange'}> status: {item.status}</div>
+                <div className="updatelink"><Link  to={`/ticket/${item._id}`}> <AiOutlineEdit /> </Link></div>
+                
+                </div>
                 {item.detail?.map((eachupdate) => {
                   return (
                     <ul>

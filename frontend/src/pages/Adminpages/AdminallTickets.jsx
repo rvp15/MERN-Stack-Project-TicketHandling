@@ -90,7 +90,7 @@ console.log(res)
           </MDBTableBody>
         );
       })}
-    </MDBTable>
+    </MDBTable>                                              
   </div>
   );
 }
