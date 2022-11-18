@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
-const Ticket = require("../../model/ticketModel");
-const User = require("../../model/userModel");
+const Ticket = require("../model/ticketModel");
+const User = require("../model/userModel");
 //GET: Route:/user/ticket
 const allTickets = asyncHandler(async (req, res) => {
   const tickets = await Ticket.find({ user: req.user.id });

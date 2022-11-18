@@ -4,7 +4,7 @@ import { MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-
+import baseURL from "../baseURL";
 
 
 
@@ -19,7 +19,7 @@ export default function AdminallTickets() {
 
   /////////////////////////////////////////
   const axiosAuth = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: baseURL+"/api",
     headers: {
       Authorization: `Bearer ${token}`,
     },
