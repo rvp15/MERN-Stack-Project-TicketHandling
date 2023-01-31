@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
+import {  MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
 import { AiOutlineDelete } from "react-icons/ai";
 
 export default function Adminalluser() {

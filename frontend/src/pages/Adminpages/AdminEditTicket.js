@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const token =
   localStorage.getItem("token") !== null
@@ -37,7 +37,9 @@ function AdminEditTicket() {
     }
   };
   useEffect(() => {
+    // eslint-disable-next-line
     getallTickets();
+     
   }, []);
 
   const handleChange = (e) => {

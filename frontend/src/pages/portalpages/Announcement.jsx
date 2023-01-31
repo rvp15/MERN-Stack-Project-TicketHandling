@@ -1,5 +1,5 @@
 import React from 'react'
-import ann from './ann.jpg'
+import ann from '../../assets/ann.jpg'
 import { Link} from "react-router-dom";
 import { MdArrowBackIosNew } from "react-icons/md";
 function Announcement() {

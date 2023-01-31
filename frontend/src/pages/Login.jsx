@@ -1,7 +1,7 @@
 import { useState} from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { setuser ,settoken} from "../features/auth/authSlice";
+import { setuser} from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {toast} from 'react-toastify'

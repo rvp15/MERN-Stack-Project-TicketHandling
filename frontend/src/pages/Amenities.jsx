@@ -1,8 +1,8 @@
 import React from 'react'
-import pool from './pool.jpg'
-import floor1 from './floor1.jpg'
-import floor2 from './floor2.jpg'
-import floor3 from './floor3.jpg'
+import pool from '../assets/pool.jpg'
+import floor1 from '../assets/floor1.jpg'
+import floor2 from '../assets/floor2.jpg'
+import floor3 from '../assets/floor3.jpg'
 export default function Amenities() {
   return (
     <div>
